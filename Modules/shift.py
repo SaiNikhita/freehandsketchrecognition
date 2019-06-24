@@ -15,4 +15,4 @@ def shift_image(img):
 
 FILE_NAME = '482.png'
 img = cv2.imread(FILE_NAME)
-shiftImage(img)
+shift_image(img)
