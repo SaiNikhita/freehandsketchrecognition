@@ -8,4 +8,4 @@ def mirror_image(img):
 
 
 img = cv2.imread('482.png', 0)
-mirrorImage(img)
+mirroring(img)
