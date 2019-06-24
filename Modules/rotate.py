@@ -13,4 +13,6 @@ def rotate_image(img, angle):
     rotation_matrix[0, 2] += (new_width / 2) - centerX
     rotation_matrix[1, 2] += (new_height / 2) - centerY
     rotated = cv2.warpAffine(img, rotation_matrix, (new_width, new_height), borderValue=(255, 255, 255))
-    return rotated
+    dim = (1111 , 1111)
+    resized = cv2.resize(rotated, dim)
+    return resized
