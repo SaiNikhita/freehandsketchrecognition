@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-def mirrorImage(img):
+def mirror_image(img):
     mirrored_img = cv2.flip(img, 1)
     cv2.imwrite("mirror_image.png", mirrored_img)
 
