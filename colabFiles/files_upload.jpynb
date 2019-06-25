@@ -1,0 +1,26 @@
+!pip install -U -q PyDrive
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+
+
+auth.authenticate_user()
+gauth = GoogleAuth()
+gauth.credentials = GoogleCredentials.get_application_default()
+drive = GoogleDrive(gauth)
+
+mimetypes = {
+    'application/vnd.google-apps.document': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.google-apps.spreadsheet': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+}
+
+
+file_id = '1VhhETuYBL01Whmvs0YSclFMDvKx7mzOKkn5GM7mJpdU'
+downloaded = drive.CreateFile({'id': file_id})
+
+
+if downloaded['mimeType'] in mimetypes:
+  download_mimetype = mimetypes[downloaded['mimeType']]
+  downloaded.GetContentFile(downloaded['title'], mimetype=download_mimetype)
+
