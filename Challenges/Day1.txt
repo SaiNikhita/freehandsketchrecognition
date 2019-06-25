@@ -1,0 +1,14 @@
+1. OpenCV error: Assertion failed
+    Solution: Full path of image should be given and they must be loaded correctly
+   
+2. Images overriding
+    Solution: Dynamic image names must be given correctly
+    
+3. Background adjustment after rotation
+    Solution: Border value (255, 255, 255) should be given
+    
+4. Rotation without cutting images
+    Solution: cv2.getRotationMatrix2D() is used
+    
+    
+    
